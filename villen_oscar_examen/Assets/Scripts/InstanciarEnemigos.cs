@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; 
+
 
 public class InstanciarEnemigos : MonoBehaviour
 {
@@ -20,7 +20,7 @@ public class InstanciarEnemigos : MonoBehaviour
     Vector3 InitCol;
 
 
-   
+    
 
     // Start is called before the first frame update
     void Start()
@@ -84,5 +84,7 @@ public class InstanciarEnemigos : MonoBehaviour
 
 
     }
+
+   
 }
 
