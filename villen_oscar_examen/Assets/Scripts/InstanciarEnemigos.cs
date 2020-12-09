@@ -20,15 +20,7 @@ public class InstanciarEnemigos : MonoBehaviour
     Vector3 InitCol;
 
 
-    //codigo para la colision, que al chocar con el objeto con etiqueta Player se destruya la bola
-    
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            Destroy(this.gameObject);
-        }
-    }
+   
 
     // Start is called before the first frame update
     void Start()
