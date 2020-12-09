@@ -7,6 +7,16 @@ public class NaveMovimiento : MonoBehaviour
 
     private float moveSpeed = 5f;
 
+    [SerializeField] MeshRenderer myMesh;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "Suelo")
+        {
+            myMesh.enabled = false;
+
+        }
+    }
 
 
     // Start is called before the first frame update

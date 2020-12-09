@@ -144,6 +144,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a33909a2c291a974ebc87d77dd63a06b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myMesh: {fileID: 144529305}
+--- !u!23 &144529305 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2300000, guid: f3b36b357c4760743ad6ab651571197f,
+    type: 3}
+  m_PrefabInstance: {fileID: 570413640}
+  m_PrefabAsset: {fileID: 0}
 --- !u!64 &144529307
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -218,7 +225,7 @@ GameObject:
   - component: {fileID: 375762811}
   - component: {fileID: 375762810}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Suelo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
