@@ -10,7 +10,7 @@ public class CameraMove : MonoBehaviour
     //Variables necesarias para la opción de suavizado en el seguimiento
     [SerializeField] float smoothVelocity = 0.3F;
     private Vector3 camaraVelocity = Vector3.zero;
-    private float alturaCamara = 10f;
+    private float alturaCamara = 5f;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,7 @@ public class CameraMove : MonoBehaviour
     void Update()
     {
         //Líneas para seguir al objetivo con suavidad
-        Vector3 targetPosition = new Vector3(Tarjet.position.x, alturaCamara, transform.position.z);
+        Vector3 targetPosition = new Vector3(Tarjet.position.x, Tarjet.position.y + alturaCamara, transform.position.z);
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref camaraVelocity, smoothVelocity);
     }
 }
