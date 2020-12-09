@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class BolaCollider : MonoBehaviour
 {
+
+
+    private AudioSource audioSource;
+
     //codigo para la colision, que al chocar con el objeto con etiqueta Player se destruya la bola
 
     private void OnTriggerEnter(Collider other)
@@ -12,15 +16,20 @@ public class BolaCollider : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Destroy(this.gameObject);
+           
+            audioSource.Play();
         }
     }
 
     [SerializeField] Text TextBolas;
 
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        audioSource = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame

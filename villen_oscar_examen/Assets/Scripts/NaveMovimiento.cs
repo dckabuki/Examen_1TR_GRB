@@ -37,6 +37,7 @@ public class NaveMovimiento : MonoBehaviour
         float desplX = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * Time.deltaTime * moveSpeed * desplX);
 
+
         //movimiento frontal. Con el eje vertical y el vector3 indicando hacia adelante, debería moverse de frente 
         float desplZ = Input.GetAxis("Vertical");
         transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed * desplZ);
