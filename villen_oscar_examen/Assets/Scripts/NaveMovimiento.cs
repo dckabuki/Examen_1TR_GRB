@@ -5,7 +5,7 @@ using UnityEngine;
 public class NaveMovimiento : MonoBehaviour
 {
 
-    private float moveSpeed = 3f;
+    private float moveSpeed = 5f;
 
 
 
