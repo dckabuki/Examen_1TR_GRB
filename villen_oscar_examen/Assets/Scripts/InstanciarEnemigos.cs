@@ -22,7 +22,7 @@ public class InstanciarEnemigos : MonoBehaviour
     void Start()
     {
         //creamos 20 bolas al lanzar el juego
-        
+
         for (int i = 1; i < 20; i++)
         {
             //damos valor a la variable randomNumber. Le asignamos un rango aleatorio entre -20 y 20
@@ -32,7 +32,7 @@ public class InstanciarEnemigos : MonoBehaviour
 
             //le asignamos las variables de posición aleatoria dentro de los límites 
 
-            InitCol = new Vector3(randomNumber1, randomNumber2, randomNumber3 );
+            InitCol = new Vector3(randomNumber1, randomNumber2, randomNumber3);
             Vector3 newPosition = InitPos.position + InitCol;
             //con instantiate instanciamos las bolas. Le decimos qué instanciar, dónde y 
             //con quaternion le damos la rotación. Pasándole identity le decimos que no rota
@@ -45,5 +45,38 @@ public class InstanciarEnemigos : MonoBehaviour
     void Update()
     {
         
+
+    }
+
+    //Función que crea una columna en una posición Random
+    void CrearBola()
+    {
+        randomNumber1 = Random.Range(-40f, 40f);
+        randomNumber2 = Random.Range(0f, 20f);
+        randomNumber3 = Random.Range(-40f, 40f);
+
+        //damos valores aleatorios a todos los ejes de las bolas
+        RandomPos = new Vector3(randomNumber1, randomNumber2, randomNumber3);
+        
+        Vector3 FinalPos = InitPos.position + RandomPos;
+        Instantiate(Bola, FinalPos, Quaternion.identity);
+    }
+
+    //corrutina para crear bolas nuevas
+
+    IEnumerator InstanciadorBolas()
+    {
+        //bucle para que se creen las bolas
+        for (; ; )
+        {
+            //para crear una bola, de momento cada 4 segundos
+            CrearBola();
+            //la variable interval sirve para dar frecuencia a la corrutina. Por ahora, 4 segundos. Debo asociarla al número de bolas existentes. 
+            float interval = 4f;
+            yield return new WaitForSeconds(interval);
+        }
+
+
     }
 }
+
