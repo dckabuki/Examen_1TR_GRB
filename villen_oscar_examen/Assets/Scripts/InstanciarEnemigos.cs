@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI; 
 
 public class InstanciarEnemigos : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class InstanciarEnemigos : MonoBehaviour
     Vector3 InitCol;
 
 
-    //codigo para la colision.
+    //codigo para la colision, que al chocar con el objeto con etiqueta Player se destruya la bola
     
     private void OnTriggerEnter(Collider other)
     {
@@ -49,6 +50,8 @@ public class InstanciarEnemigos : MonoBehaviour
             //con quaternion le damos la rotación. Pasándole identity le decimos que no rota
             Instantiate(Bola, newPosition, Quaternion.identity);
         }
+
+        StartCoroutine("InstanciadorBolas");
 
     }
 
